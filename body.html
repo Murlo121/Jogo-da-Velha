@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Jogo da Velha</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<div class="players">  
+
+    <div id="player1">
+        <input type="text" name="j1" id="j1" placeholder="Jogador 1">
+    </div>
+
+    <div id="player2">
+        <input type="text" name="j2" id="j2" placeholder="Jogador 2">
+    </div>
+</div> 
+    <div class="cont">
+        <div id="p1" class="cell"></div>
+        <div id="p2" class="cell"></div>
+        <div id="p3" class="cell"></div>
+        <div id="p4" class="cell"></div>
+        <div id="p5" class="cell"></div>
+        <div id="p6" class="cell"></div>
+        <div id="p7" class="cell"></div>
+        <div id="p8" class="cell"></div>
+        <div id="p9" class="cell"></div>
+    </div>
+
+    <script>
+        let p1 = document.querySelector("div#p1");
+        let p2 = document.querySelector("div#p2");
+        let p3 = document.querySelector("div#p3");
+        let p4 = document.querySelector("div#p4");
+        let p5 = document.querySelector("div#p5");
+        let p6 = document.querySelector("div#p6");
+        let p7 = document.querySelector("div#p7");
+        let p8 = document.querySelector("div#p8");
+        let p9 = document.querySelector("div#p9");
+    
+        let jogada = 'x';
+    
+        function clicarP(element) {
+            if (element.innerHTML === '') {
+                element.innerHTML = jogada;
+                element.classList.add(jogada === 'x' ? 'x' : 'o');
+                jogada = (jogada === 'x') ? 'O' : 'x';
+                Ganhar();
+            }
+        }
+    
+        p1.addEventListener("click", () => clicarP(p1));
+        p2.addEventListener("click", () => clicarP(p2));
+        p3.addEventListener("click", () => clicarP(p3));
+        p4.addEventListener("click", () => clicarP(p4));
+        p5.addEventListener("click", () => clicarP(p5));
+        p6.addEventListener("click", () => clicarP(p6));
+        p7.addEventListener("click", () => clicarP(p7));
+        p8.addEventListener("click", () => clicarP(p8));
+        p9.addEventListener("click", () => clicarP(p9));
+    
+        function Ganhar() {
+            const j1 = document.querySelector("#j1").value;
+            const j2 = document.querySelector("#j2").value;
+    
+            if (
+                (p1.innerHTML === "x" && p2.innerHTML === "x" && p3.innerHTML === "x") ||
+                (p4.innerHTML === "x" && p5.innerHTML === "x" && p6.innerHTML === "x") ||
+                (p7.innerHTML === "x" && p8.innerHTML === "x" && p9.innerHTML === "x") ||
+                (p1.innerHTML === "x" && p5.innerHTML === "x" && p9.innerHTML === "x") ||
+                (p3.innerHTML === "x" && p5.innerHTML === "x" && p7.innerHTML === "x") ||
+                (p1.innerHTML === "x" && p4.innerHTML === "x" && p7.innerHTML === "x") ||
+                (p2.innerHTML === "x" && p5.innerHTML === "x" && p8.innerHTML === "x") ||
+                (p3.innerHTML === "x" && p6.innerHTML === "x" && p9.innerHTML === "x")
+            ) {
+                alert(j1 + " venceu!");
+                location.reload();
+            } else if (
+                (p1.innerHTML === "O" && p2.innerHTML === "O" && p3.innerHTML === "O") ||
+                (p4.innerHTML === "O" && p5.innerHTML === "O" && p6.innerHTML === "O") ||
+                (p7.innerHTML === "O" && p8.innerHTML === "O" && p9.innerHTML === "O") ||
+                (p1.innerHTML === "O" && p5.innerHTML === "O" && p9.innerHTML === "O") ||
+                (p3.innerHTML === "O" && p5.innerHTML === "O" && p7.innerHTML === "O") ||
+                (p1.innerHTML === "O" && p4.innerHTML === "O" && p7.innerHTML === "O") ||
+                (p2.innerHTML === "O" && p5.innerHTML === "O" && p8.innerHTML === "O") ||
+                (p3.innerHTML === "O" && p6.innerHTML === "O" && p9.innerHTML === "O")
+            ) {
+                alert(j2 + " venceu!");
+                location.reload();
+            }
+        }
+    </script>
+    
+</body>
+</html>
