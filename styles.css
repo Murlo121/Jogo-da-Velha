@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #E4C2C6;
+}
+
+div.cont {
+    margin-top: 5vh;
+    margin-left: 60vh;
+    max-width: 725px;
+    float: left;
+}
+
+.cell {
+    font: normal 100pt Arial;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    float: left;
+    box-sizing: border-box;
+}
+
+.x {
+    color: #21A179;
+}
+
+.o {
+    color: #CA61C3;
+}
+
+#p1 {
+    border-right: 5px solid #03B5AA;
+    border-bottom: 5px solid #03B5AA;
+}
+
+#p2 {
+    border-bottom: 5px solid #03B5AA;
+}
+
+#p3 {
+    border-bottom: 5px solid #03B5AA;
+    border-left: 5px solid #03B5AA;
+}
+
+#p4 {
+    border-right: 5px solid #03B5AA;
+}
+
+#p6 {
+    border-left: 5px solid #03B5AA;
+}
+
+#p7 {
+    border-right: 5px solid #03B5AA;
+    border-top: 5px solid #03B5AA;
+}
+
+#p8 {
+    border-top: 5px solid #03B5AA;
+}
+
+#p9 {
+    border-top: 5px solid #03B5AA;
+    border-left: 5px solid #03B5AA;
+}
+
+input{
+	border-radius: 5px;
+	border: 2px solid #00BFB3;
+}
+
+.players{
+
+	margin: 4px auto;
+	width: 500px;
+    height: 100px;
+}
+#player1{
+	float: left;
+}
+#player2{
+
+	margin-left: 20px;
+	float: left;
+}
